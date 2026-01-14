@@ -1,0 +1,3758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mane Accident Hospital - Advanced Orthopedic Care</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Branding: Deep Blue & Emergency Red mapped to template variables */
+            --primary: #0f172a;
+            /* Deep Blue (was generic primary) */
+            --primary-dark: #020617;
+
+            --teal: #0f172a;
+            /* MAIN BRAND COLOR (Deep Blue) */
+            --teal-light: #1e293b;
+            /* Lighter Blue */
+
+            --aqua: #dc2626;
+            /* ACCENT COLOR (Emergency Red) */
+            --soft-green: #10b981;
+            /* Success Green */
+
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .bg-teal {
+            background-color: var(--teal) !important;
+        }
+
+        .bg-teal-subtle {
+            background-color: rgba(15, 23, 42, 0.1) !important;
+        }
+
+        /* ======= NEW CONTACT SECTION STYLES ======= */
+        .contact-info-card {
+            padding: 30px;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: center;
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            height: 100%;
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+            border-color: var(--aqua);
+        }
+
+        .contact-info-card .icon-box {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin: 0 auto 25px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-card:hover .icon-box {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .contact-info-card h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .contact-info-card p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .contact-form-wrapper {
+            background: #fff;
+            padding: 45px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+        }
+
+        .form-floating>.form-control:focus~label,
+        .form-floating>.form-control:not(:placeholder-shown)~label {
+            color: var(--teal);
+        }
+
+        .contact-map-wrapper {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            min-height: 450px;
+        }
+
+        .contact-map-wrapper iframe {
+            filter: grayscale(0.2) contrast(1.1);
+            transition: all 0.5s ease;
+        }
+
+        .contact-form-wrapper .form-control {
+            border: 1.5px solid #e2e8f0 !important;
+            border-radius: 12px !important;
+            padding: 1rem 1.25rem !important;
+            background-color: #f8fafc !important;
+            transition: all 0.3s ease !important;
+            color: var(--text-dark) !important;
+        }
+
+        .contact-form-wrapper .form-control:focus {
+            border-color: var(--teal) !important;
+            box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.1) !important;
+            background-color: #fff !important;
+        }
+
+        .form-floating>label {
+            padding: 1rem 1.25rem !important;
+        }
+
+        .contact-map-wrapper:hover iframe {
+            filter: grayscale(0);
+        }
+
+        @media (max-width: 767.98px) {
+            .contact-form-wrapper {
+                padding: 30px 20px;
+            }
+
+            .contact-map-wrapper {
+                min-height: 350px;
+            }
+        }
+
+        .bg-teal-light {
+            background-color: var(--teal-light) !important;
+        }
+
+        .text-teal {
+            color: var(--teal) !important;
+        }
+
+        .text-aqua {
+            color: var(--aqua) !important;
+        }
+
+        /* Scroll Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2000;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--aqua);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        /* Top Info Bar */
+        .top-info-bar {
+            background-color: var(--teal);
+            color: white;
+            padding: 10px 0;
+            font-size: 0.85rem;
+            position: relative;
+            z-index: 1050;
+        }
+
+        .top-info-bar a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .top-info-bar a:hover {
+            color: var(--aqua);
+        }
+
+        /* Navbar */
+        .navbar {
+            transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+            padding: 1rem 0;
+            top: 0;
+            z-index: 1040;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98) !important;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 0;
+            top: 4px !important;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .navbar-toggler {
+            border: 1px solid rgba(15, 23, 42, 0.1) !important;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.25rem rgba(15, 23, 42, 0.1);
+        }
+
+        /* Responsive Mobile Menu Customization */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: white;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                margin-top: 15px;
+                padding: 20px;
+                border-radius: 12px;
+            }
+
+            .nav-link {
+                padding: 12px 0;
+                border-bottom: 1px solid #f1f5f9;
+            }
+
+            .nav-item:last-child .nav-link {
+                border-bottom: none;
+            }
+
+            .navbar-nav .btn-teal {
+                margin-top: 15px;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--aqua) !important;
+        }
+
+        /* Social Sidebar */
+        .social-sidebar {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1040;
+            display: none;
+            flex-direction: column;
+        }
+
+        @media (min-width: 992px) {
+            .social-sidebar {
+                display: flex;
+            }
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            color: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            margin-bottom: 5px;
+            border-radius: 0 8px 8px 0;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            width: 60px;
+            background: var(--aqua);
+            color: white;
+        }
+
+        /* Floating Action Buttons */
+        .fab-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1040;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .fab-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+
+        .fab-btn:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        .fab-whatsapp {
+            background: #25D366;
+        }
+
+        .fab-phone {
+            background: var(--aqua);
+        }
+
+        .fab-top {
+            background: var(--teal);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        /* Hero Carousel */
+        .hero-slide {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            margin-top: 0;
+        }
+
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Gradient: Deep Blue to Red-tinged Blue */
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(220, 38, 38, 0.4) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-slide h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero-slide p.text-uppercase {
+            letter-spacing: 3px;
+            color: var(--aqua) !important;
+        }
+
+        /* Buttons */
+        .btn-teal {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+            border: none;
+            color: #fff;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-teal:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.4);
+            color: #fff;
+        }
+
+        .btn-outline-teal {
+            border: 2px solid var(--teal);
+            color: var(--teal);
+            background: transparent;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-teal:hover {
+            background: var(--teal);
+            color: #fff;
+        }
+
+        /* Sections */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--aqua);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.875rem;
+        }
+
+        /* Cards */
+        .service-card {
+            border: none;
+            border-radius: 16px;
+            transition: all 0.4s ease;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+        }
+
+        .service-card .icon-box {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--aqua) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: #fff;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Doctor Card */
+        .doctor-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .doctor-card img {
+            height: 350px;
+            object-fit: cover;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .testimonial-card .stars {
+            color: #fbbf24;
+        }
+
+        /* Gallery */
+        .gallery-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .gallery-card img {
+            height: 280px !important;
+            /* Fixed height for uniformity */
+            width: 100%;
+            object-fit: cover;
+            /* Ensures image covers area without distortion */
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(220, 38, 38, 0.6));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-card:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-filter.active {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+            border-color: var(--teal);
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+
+        /* Enhanced Facilities */
+        .facility-card {
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-radius: 15px;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .facility-img-wrapper img {
+            transition: transform 0.5s ease;
+            height: 220px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .facility-card:hover .facility-img-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .facility-icon-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--aqua);
+            color: white;
+            border-bottom-left-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 10;
+        }
+
+        /* Enhanced Testimonial Slider */
+        .testimonial-slider-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            margin: 20px;
+        }
+
+        .testimonial-slider-card::before {
+            content: '\201C';
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            font-size: 8rem;
+            color: var(--teal);
+            opacity: 0.1;
+            font-family: sans-serif;
+        }
+
+        .user-img-ring {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 4px solid var(--teal-light);
+            padding: 3px;
+        }
+
+        /* Enhanced Appointment Section */
+        .appointment-bg {
+            background: url('https://images.pexels.com/photos/127873/pexels-photo-127873.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover fixed;
+            position: relative;
+        }
+
+        .appointment-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.9);
+            /* Dark Blue Overlay */
+        }
+
+        .glass-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+        }
+
+        .form-floating>.form-control {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+        }
+
+        .form-floating>label {
+            color: #666;
+        }
+
+        /* Utility Helpers */
+        .bg-white-20 {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .opacity-10 {
+            opacity: 0.1;
+        }
+
+        .letter-spacing-2 {
+            letter-spacing: 2px;
+        }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 28px;
+            }
+
+            h1.display-4,
+            .display-4 {
+                font-size: 2.2rem;
+            }
+
+            .fab-container {
+                right: 15px;
+                bottom: 15px;
+            }
+
+            .fab-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+
+            .glass-form {
+                padding: 1.5rem !important;
+            }
+
+            .section-padding {
+                padding: 50px 0;
+            }
+
+            .hero-slide {
+                min-height: 80vh;
+            }
+        }
+
+        /* ======= NEW SECTIONS STYLES ======= */
+        /* Golden Hour Protocol */
+        .protocol-step {
+            padding: 30px;
+            border-radius: 20px;
+            background: #fff;
+            border-left: 5px solid var(--aqua);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .protocol-step:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 35px rgba(220, 38, 38, 0.1);
+        }
+
+        .protocol-number {
+            width: 40px;
+            height: 40px;
+            background: var(--aqua);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* OPD Schedule */
+        .opd-schedule-wrapper {
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+        }
+
+        .opd-table thead {
+            background: var(--teal);
+            color: #fff;
+        }
+
+        .opd-table th {
+            padding: 20px !important;
+            font-weight: 600;
+            border: none;
+        }
+
+        .opd-table td {
+            padding: 15px 20px !important;
+            vertical-align: middle;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        /* Technology Showcase */
+        .tech-card {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .tech-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .tech-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .tech-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, transparent 100%);
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        /* FAQ Section */
+        .faq-accordion .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            border-radius: 12px !important;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-accordion .accordion-button {
+            padding: 20px;
+            font-weight: 600;
+            color: var(--teal);
+            box-shadow: none;
+        }
+
+        .faq-accordion .accordion-button:not(.collapsed) {
+            background-color: var(--teal);
+            color: #fff;
+        }
+
+        .faq-accordion .accordion-button::after {
+            filter: grayscale(1) invert(0);
+        }
+
+        .faq-accordion .accordion-button:not(.collapsed)::after {
+            filter: grayscale(1) invert(1);
+        }
+
+        .faq-accordion .accordion-body {
+            padding: 25px;
+            line-height: 1.7;
+            color: var(--text-muted);
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100">
+
+    <!-- Scroll Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Top Info Bar -->
+    <div class="top-info-bar">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class="d-flex flex-wrap justify-content-center gap-3 gap-md-4 mb-2 mb-md-0">
+                    <span class="small"><i class="bi bi-telephone-fill me-2 text-aqua"></i>+91 99999 99999</span>
+                    <span class="small"><i class="bi bi-envelope-fill me-2 text-aqua"></i>info@Manehospital.com</span>
+                    <span class="small d-none d-sm-inline"><i class="bi bi-geo-alt-fill me-2 text-aqua"></i>Phaltan,
+                        Satara</span>
+                </div>
+                <div class="d-flex gap-3">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-white">
+        <div class="container">
+            <a class="navbar-brand text-teal" href="#">
+                <i class="bi bi-heart-pulse-fill me-2 text-aqua"></i>Mane Hospital
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-3">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">About
+                            Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#about"><i class="bi bi-hospital me-2 text-teal"></i>Our
+                                    Hospital</a></li>
+                            <li><a class="dropdown-item" href="#doctor-Mane"><i
+                                        class="bi bi-person-badge me-2 text-teal"></i>Dr. Prashant Mane (MBBS, MS
+                                    Ortho)</a></li>
+                            <li><a class="dropdown-item" href="#doctor-Dipali"><i
+                                        class="bi bi-person-badge-fill me-2 text-teal"></i>Dr. Dipali Mane (MBBS,
+                                    DGO)</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#gallery"><i
+                                        class="bi bi-images me-2 text-teal"></i>Hospital Gallery</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-bold text-danger" href="#" role="button"
+                            data-bs-toggle="dropdown">
+                            <i class="bi bi-exclamation-triangle-fill me-1"></i>Emergency
+                        </a>
+                        <ul class="dropdown-menu border-danger">
+                            <li><a class="dropdown-item text-danger fw-semibold" href="#emergency"><i
+                                        class="bi bi-telephone-fill me-2"></i>24/7 Accident & Trauma Care</a></li>
+                            <li><a class="dropdown-item" href="#emergency"><i
+                                        class="bi bi-truck-front me-2 text-danger"></i>Ambulance Service</a></li>
+                            <li><a class="dropdown-item" href="#emergency"><i
+                                        class="bi bi-bandaid me-2 text-danger"></i>First Aid Instructions</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Specialties</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#services"><i
+                                        class="bi bi-gear-wide-connected me-2 text-teal"></i>Joint Replacement (Knee &
+                                    Hip)</a></li>
+                            <li><a class="dropdown-item" href="#services"><i
+                                        class="bi bi-activity me-2 text-teal"></i>Spine & Back Surgery</a></li>
+                            <li><a class="dropdown-item" href="#services"><i
+                                        class="bi bi-bandaid me-2 text-teal"></i>Fracture & Complex Trauma</a></li>
+                            <li><a class="dropdown-item" href="#services"><i
+                                        class="bi bi-eyedropper me-2 text-teal"></i>Arthroscopy (Keyhole Surgery)</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#services"><i
+                                        class="bi bi-wrench-adjustable me-2 text-teal"></i>Ilizarov Surgery (Russian
+                                    Method)</a></li>
+                            <li><a class="dropdown-item" href="#services"><i
+                                        class="bi bi-trophy me-2 text-teal"></i>Sports Injury & Ligament Surgery</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Facilities</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#facilities"><i
+                                        class="bi bi-hospital me-2 text-teal"></i>Modern Operation Theater</a></li>
+                            <li><a class="dropdown-item" href="#facilities"><i
+                                        class="bi bi-radioactive me-2 text-teal"></i>Digital X-Ray & C-Arm</a></li>
+                            <li><a class="dropdown-item" href="#facilities"><i
+                                        class="bi bi-person-walking me-2 text-teal"></i>Physiotherapy & Rehab</a></li>
+                            <li><a class="dropdown-item" href="#facilities"><i
+                                        class="bi bi-capsule me-2 text-teal"></i>Pathology Lab & Pharmacy</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Patient Corner
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#insurance"><i
+                                        class="bi bi-credit-card me-2 text-teal"></i>Cashless Insurance / TPA</a></li>
+                            <li><a class="dropdown-item" href="#insurance"><i
+                                        class="bi bi-building me-2 text-teal"></i>Government Health Schemes</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#testimonials"><i
+                                        class="bi bi-star-fill me-2 text-teal"></i>Patient Reviews</a></li>
+                            <li><a class="dropdown-item" href="#blog"><i
+                                        class="bi bi-journal-medical me-2 text-teal"></i>Health Blog (Bone Care
+                                    Tips)</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Contact Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#contact"><i
+                                        class="bi bi-geo-alt-fill me-2 text-teal"></i>Location (Google Maps)</a></li>
+                            <li><a class="dropdown-item" href="#appointment"><i
+                                        class="bi bi-calendar-check me-2 text-teal"></i>Book an Appointment</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="#appointment" class="btn btn-teal">
+                    <i class="bi bi-calendar-plus me-1"></i>Book Appointment
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Slider) -->
+    <section id="home" class="p-0">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="hero-slide"
+                        style="background-image: url('https://images.pexels.com/photos/7446990/pexels-photo-7446990.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+                        <div class="container hero-content">
+                            <div class="row">
+                                <div class="col-lg-8" data-aos="fade-right">
+                                    <p class="text-uppercase fw-semibold mb-3">
+                                        <i class="bi bi-bandaid-fill me-2"></i>24/7 Trauma Center
+                                    </p>
+                                    <h1 class="text-white mb-4">Mane Accident Hospital</h1>
+                                    <p class="lead text-white-50 mb-5">
+                                        Leading Orthopedic & Trauma Care in Phaltan. Expert management of complex
+                                        fractures and accidents by Dr. Prashant Mane.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-3">
+                                        <a href="#appointment"
+                                            class="btn btn-light btn-lg px-4 py-3 rounded-pill fw-semibold">
+                                            <i class="bi bi-calendar-check me-2"></i>Book Visit
+                                        </a>
+                                        <a href="tel:+919999999999"
+                                            class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill fw-semibold">
+                                            <i class="bi bi-telephone-fill me-2"></i>Emergency
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="hero-slide"
+                        style="background-image: url('https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+                        <div class="container hero-content">
+                            <div class="row">
+                                <div class="col-lg-8" data-aos="fade-right">
+                                    <p class="text-uppercase fw-semibold mb-3">
+                                        <i class="bi bi-gear-wide-connected me-2"></i>Advanced Orthopedics
+                                    </p>
+                                    <h1 class="text-white mb-4">Joint Replacement Surgery</h1>
+                                    <p class="lead text-white-50 mb-5">
+                                        Total Knee and Hip Replacement surgeries. Restoring mobility and quality of life
+                                        with modern techniques.
+                                    </p>
+                                    <a href="#services"
+                                        class="btn btn-teal btn-lg px-4 py-3 rounded-pill fw-semibold border-white text-white">Learn
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="hero-slide"
+                        style="background-image: url('https://images.pexels.com/photos/5473184/pexels-photo-5473184.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+                        <div class="container hero-content">
+                            <div class="row">
+                                <div class="col-lg-8" data-aos="fade-right">
+                                    <p class="text-uppercase fw-semibold mb-3">
+                                        <i class="bi bi-activity me-2"></i>Spine Solutions
+                                    </p>
+                                    <h1 class="text-white mb-4">Expert Spine Care</h1>
+                                    <p class="lead text-white-50 mb-5">
+                                        Compassionate care for back pain, slip disc, and spinal disorders. Minimally
+                                        invasive procedures for faster recovery.
+                                    </p>
+                                    <a href="#appointment"
+                                        class="btn btn-light btn-lg px-4 py-3 rounded-pill fw-semibold">Consult Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-6 col-md-3 stat-item mb-4 mb-md-0" data-aos="fade-up">
+                    <h3 class="text-teal">23+</h3>
+                    <p class="text-muted mb-0">Years Experience</p>
+                </div>
+                <div class="col-6 col-md-3 stat-item mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-teal">10K+</h3>
+                    <p class="text-muted mb-0">Surgeries Done</p>
+                </div>
+                <div class="col-6 col-md-3 stat-item" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-teal">24/7</h3>
+                    <p class="text-muted mb-0">Emergency Care</p>
+                </div>
+                <div class="col-6 col-md-3 stat-item" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-teal">4.3</h3>
+                    <p class="text-muted mb-0">Star Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Services Section -->
+    <section id="emergency" class="section-padding"
+        style="background: linear-gradient(135deg, #fef2f2 0%, #fff1f2 100%);">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="section-subtitle" style="color: #dc2626;">We Are Here For You</p>
+                <h2 class="section-title">24/7 Emergency Services</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">
+                    Specialized accident and trauma care center. Immediate attention for road accidents, fractures, and
+                    emergencies.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm h-100 p-4 text-center">
+                        <div class="bg-danger rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-4"
+                            style="width: 80px; height: 80px;">
+                            <i class="bi bi-heart-pulse text-white fs-1"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">24/7 Accident & Trauma Care</h5>
+                        <p class="text-muted small mb-3">Expert handling of polytrauma, head injuries, and complex
+                            fractures at any time of day.</p>
+                        <a href="tel:+919999999999" class="btn btn-danger rounded-pill">Call 24/7</a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm h-100 p-4 text-center">
+                        <div class="bg-danger rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-4"
+                            style="width: 80px; height: 80px;">
+                            <i class="bi bi-truck-front text-white fs-1"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Ambulance Service</h5>
+                        <p class="text-muted small mb-3">Quick response ambulance service available for bringing
+                            patients to the hospital safely.</p>
+                        <a href="tel:108" class="btn btn-outline-danger rounded-pill">Call Ambulance</a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm h-100 p-4 text-center">
+                        <div class="bg-danger rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-4"
+                            style="width: 80px; height: 80px;">
+                            <i class="bi bi-bandaid text-white fs-1"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">First Aid Instructions</h5>
+                        <p class="text-muted small mb-3">Immediate first aid and stabilization for fracture and accident
+                            victims upon arrival.</p>
+                        <a href="#" class="btn btn-outline-danger rounded-pill">First Aid Guide</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Golden Hour Protocol Section -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="section-subtitle">Life Saving Tips</p>
+                <h2 class="section-title">The Golden Hour Protocol</h2>
+                <p class="text-muted mx-auto" style="max-width: 700px;">
+                    The first 60 minutes after an accident are critical. Following these steps can prevent further
+                    injury and save lives.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="protocol-step">
+                        <div class="protocol-number">01</div>
+                        <h5 class="fw-bold mb-3">Dial for Help</h5>
+                        <p class="text-muted small">Immediately call our 24/7 Emergency Line at <b>1800-123-4567</b>.
+                            Give the exact location and nature of the accident.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="protocol-step">
+                        <div class="protocol-number">02</div>
+                        <h5 class="fw-bold mb-3">Immobilize</h5>
+                        <p class="text-muted small">Avoid moving the victim unless there is a fire or explosion risk. If
+                            a limb is fractured, use a splint or rolled newspapers to keep it still.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="protocol-step">
+                        <div class="protocol-number">03</div>
+                        <h5 class="fw-bold mb-3">Control Bleeding</h5>
+                        <p class="text-muted small">Apply firm, steady pressure to any bleeding wounds using a clean
+                            cloth or bandage. Keep the wound elevated if possible.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="protocol-step">
+                        <div class="protocol-number">04</div>
+                        <h5 class="fw-bold mb-3">Reassure</h5>
+                        <p class="text-muted small">Keep the victim calm and warm. Do not give them anything to eat or
+                            drink, as it might interfere with potential emergency surgery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-left">
+                    <img src="https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Hospital" class="img-fluid rounded-4 shadow-lg">
+                </div>
+                <div class="col-lg-6 ps-lg-5" data-aos="fade-right">
+                    <p class="section-subtitle">About Us</p>
+                    <h2 class="section-title">Mane Accident Hospital</h2>
+                    <p class="text-muted mb-4">
+                        Located in Phaltan, Mane Accident Hospital is a renowned medical facility specializing in
+                        exceptional orthopedic care and comprehensive accident management.
+                    </p>
+                    <p class="text-muted mb-4">
+                        Recognized for our patient-centric approach, we offer advanced surgical capabilities including
+                        Joint Replacement, Spine Surgery, and Arthroscopy.
+                    </p>
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3"><i
+                                    class="bi bi-check-circle-fill text-aqua me-2 fs-5"></i><span>Advanced OT</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3"><i
+                                    class="bi bi-check-circle-fill text-aqua me-2 fs-5"></i><span>Expert Surgeons</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3"><i
+                                    class="bi bi-check-circle-fill text-aqua me-2 fs-5"></i><span>Digital X-Ray</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3"><i
+                                    class="bi bi-check-circle-fill text-aqua me-2 fs-5"></i><span>Cashless
+                                    Facility</span></div>
+                        </div>
+                    </div>
+                    <a href="#services" class="btn btn-teal">Explore Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctor Section (Dr. Prashant Mane) -->
+    <section id="doctor-Mane" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0 order-lg-2" data-aos="zoom-in">
+                    <img src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Dr. Prashant Mane" class="img-fluid rounded-4 shadow-lg h-auto">
+                </div>
+                <div class="col-lg-7 pe-lg-5 order-lg-1" data-aos="fade-right">
+                    <p class="section-subtitle">Chief Surgeon</p>
+                    <h2 class="section-title">Dr. Prashant Mane</h2>
+                    <h5 class="text-teal mb-3">MBBS, MS (Orthopedics)</h5>
+                    <p class="text-muted mb-4">
+                        With over **23 years of experience**, Dr. Prashant Mane is a leading Orthopedic Surgeon in
+                        Phaltan. He specializes in handling complex trauma cases, joint replacements, and spine
+                        surgeries.
+                    </p>
+                    <div class="row mb-4">
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Trauma &
+                                    Accidents</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Joint Replacement
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Spine Surgery
+                                </li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Pediatric Ortho
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#appointment" class="btn btn-teal">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctor Section (Dr. Dipali Mane) -->
+    <section id="doctor-Dipali" class="section-padding" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0 order-lg-1" data-aos="zoom-in">
+                    <img src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Dr. Dipali Mane" class="img-fluid rounded-4 shadow-lg h-auto">
+                </div>
+                <div class="col-lg-7 ps-lg-5 order-lg-2" data-aos="fade-left">
+                    <p class="section-subtitle">Senior Consultant</p>
+                    <h2 class="section-title">Dr. Dipali Mane</h2>
+                    <h5 class="text-teal mb-3">MBBS, DGO (Obstetrics & Gynecology)</h5>
+                    <p class="text-muted mb-4">
+                        Dr. Dipali Mane provides expert care in women's health and wellness. She is dedicated to
+                        providing compassionate care and specialized treatments for her patients.
+                    </p>
+                    <div class="row mb-4">
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Antenatal Care
+                                </li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>High-Risk
+                                    Pregnancy</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Infertility
+                                    Treatment</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Gynecology Care
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#appointment" class="btn btn-teal">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPD Schedule Section -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="section-subtitle">Consultation Hours</p>
+                <h2 class="section-title">OPD & Consultant Schedule</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10" data-aos="fade-up">
+                    <!-- Desktop View (Visible on Large Screens) -->
+                    <div class="opd-schedule-wrapper table-responsive d-none d-lg-block">
+                        <table class="table opd-table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Consultant</th>
+                                    <th>Specialty</th>
+                                    <th>Days</th>
+                                    <th>Morning Time</th>
+                                    <th>Evening Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="me-3">
+                                                <i class="bi bi-person-circle fs-3 text-teal"></i>
+                                            </div>
+                                            <div>
+                                                <div class="fw-bold">Dr. Prashant Mane</div>
+                                                <small class="text-muted">MS (Orthopedics)</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Orthopedic Surgeon</td>
+                                    <td>Mon - Sat</td>
+                                    <td>10:00 AM - 2:00 PM</td>
+                                    <td>5:00 PM - 8:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="me-3">
+                                                <i class="bi bi-person-circle fs-3 text-teal"></i>
+                                            </div>
+                                            <div>
+                                                <div class="fw-bold">Dr. Dipali Mane</div>
+                                                <small class="text-muted">MBBS, DGO</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Obstetrics & Gynae</td>
+                                    <td>Mon - Sat</td>
+                                    <td>11:00 AM - 3:00 PM</td>
+                                    <td>6:00 PM - 9:00 PM</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Mobile View (Visible on Small Screens) -->
+                    <div class="row g-4 d-lg-none">
+                        <!-- Dr. Prashant Mane Card -->
+                        <div class="col-11 mx-auto">
+                            <div class="protocol-step border-teal" style="border-left-color: var(--teal) !important;">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-person-badge-fill fs-2 text-teal me-3"></i>
+                                    <div>
+                                        <h5 class="fw-bold mb-0">Dr. Prashant Mane</h5>
+                                        <small class="text-teal fw-semibold">Orthopedic Surgeon</small>
+                                    </div>
+                                </div>
+                                <div class="schedule-details small">
+                                    <p class="mb-2"><i class="bi bi-calendar-event me-2 text-aqua"></i><b>Days:</b> Mon
+                                        - Sat</p>
+                                    <p class="mb-2"><i class="bi bi-sun me-2 text-aqua"></i><b>Morning:</b> 10:00 AM -
+                                        2:00 PM</p>
+                                    <p class="mb-0"><i class="bi bi-moon-stars me-2 text-aqua"></i><b>Evening:</b> 5:00
+                                        PM - 8:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Dr. Dipali Mane Card -->
+                        <div class="col-11 mx-auto">
+                            <div class="protocol-step border-teal" style="border-left-color: var(--teal) !important;">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-person-badge-fill fs-2 text-teal me-3"></i>
+                                    <div>
+                                        <h5 class="fw-bold mb-0">Dr. Dipali Mane</h5>
+                                        <small class="text-teal fw-semibold">Obstetrics & Gynae</small>
+                                    </div>
+                                </div>
+                                <div class="schedule-details small">
+                                    <p class="mb-2"><i class="bi bi-calendar-event me-2 text-aqua"></i><b>Days:</b> Mon
+                                        - Sat</p>
+                                    <p class="mb-2"><i class="bi bi-sun me-2 text-aqua"></i><b>Morning:</b> 11:00 AM -
+                                        3:00 PM</p>
+                                    <p class="mb-0"><i class="bi bi-moon-stars me-2 text-aqua"></i><b>Evening:</b> 6:00
+                                        PM - 9:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <p class="text-muted small"><i class="bi bi-info-circle me-1"></i> Sunday emergencies are
+                            attended by our trauma team 24/7.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <!-- Services / Specialties Section -->
+    <section id="services" class="section-padding" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="section-subtitle">Our Specialties</p>
+                <h2 class="section-title">Orthopedic Surgeries & Treatments</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">
+                    Advanced surgical techniques and comprehensive treatment for all bone and joint conditions.
+                </p>
+            </div>
+            <div class="row g-4">
+                <!-- Joint Replacement (Knee & Hip) -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden service-card">
+                        <img src="https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Joint Replacement Surgery" class="card-img-top"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-teal rounded-circle d-flex align-items-center justify-content-center me-3"
+                                    style="width: 45px; height: 45px; min-width: 45px;">
+                                    <i class="bi bi-gear-wide-connected text-white fs-5"></i>
+                                </div>
+                                <h5 class="fw-bold mb-0">Joint Replacement (Knee & Hip)</h5>
+                            </div>
+                            <p class="text-muted small mb-0">Advanced total and partial knee/hip replacement surgeries
+                                using minimally invasive techniques. Faster recovery with modern implants and
+                                computer-assisted navigation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spine & Back Surgery -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden service-card">
+                        <img src="https://images.pexels.com/photos/5473184/pexels-photo-5473184.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Spine Surgery" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-teal rounded-circle d-flex align-items-center justify-content-center me-3"
+                                    style="width: 45px; height: 45px; min-width: 45px;">
+                                    <i class="bi bi-activity text-white fs-5"></i>
+                                </div>
+                                <h5 class="fw-bold mb-0">Spine & Back Surgery</h5>
+                            </div>
+                            <p class="text-muted small mb-0">Comprehensive spine care including disc herniation, spinal
+                                stenosis, scoliosis correction, and minimally invasive spine surgery (MISS) for faster
+                                recovery.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arthroscopy (Keyhole Surgery) -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden service-card">
+                        <img src="https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Arthroscopy Surgery" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-teal rounded-circle d-flex align-items-center justify-content-center me-3"
+                                    style="width: 45px; height: 45px; min-width: 45px;">
+                                    <i class="bi bi-eyedropper text-white fs-5"></i>
+                                </div>
+                                <h5 class="fw-bold mb-0">Arthroscopy (Keyhole Surgery)</h5>
+                            </div>
+                            <p class="text-muted small mb-0">Minimally invasive joint surgery through tiny incisions.
+                                Used for ACL reconstruction, meniscus repair, rotator cuff repair, and cartilage
+                                restoration.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ilizarov Surgery (Russian Method) -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden service-card">
+                        <img src="https://images.pexels.com/photos/4226119/pexels-photo-4226119.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Ilizarov Surgery" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-teal rounded-circle d-flex align-items-center justify-content-center me-3"
+                                    style="width: 45px; height: 45px; min-width: 45px;">
+                                    <i class="bi bi-wrench-adjustable text-white fs-5"></i>
+                                </div>
+                                <h5 class="fw-bold mb-0">Ilizarov Surgery (Russian Method)</h5>
+                            </div>
+                            <p class="text-muted small mb-0">Specialized external fixator technique for limb
+                                lengthening, deformity correction, bone transport, and complex non-union fracture
+                                treatment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fracture & Complex Trauma -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden service-card">
+                        <img src="https://images.pexels.com/photos/7446990/pexels-photo-7446990.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Fracture Care" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-teal rounded-circle d-flex align-items-center justify-content-center me-3"
+                                    style="width: 45px; height: 45px; min-width: 45px;">
+                                    <i class="bi bi-bandaid text-white fs-5"></i>
+                                </div>
+                                <h5 class="fw-bold mb-0">Fracture & Complex Trauma</h5>
+                            </div>
+                            <p class="text-muted small mb-0">24/7 emergency trauma care with advanced fracture fixation,
+                                polytrauma management, pelvis & acetabulum surgery, and rapid recovery protocols.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sports Injury & Ligament Surgery -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden service-card">
+                        <img src="https://images.pexels.com/photos/3760275/pexels-photo-3760275.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Sports Injury" class="card-img-top" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-teal rounded-circle d-flex align-items-center justify-content-center me-3"
+                                    style="width: 45px; height: 45px; min-width: 45px;">
+                                    <i class="bi bi-trophy text-white fs-5"></i>
+                                </div>
+                                <h5 class="fw-bold mb-0">Sports Injury & Ligament Surgery</h5>
+                            </div>
+                            <p class="text-muted small mb-0">Comprehensive sports medicine for ACL, PCL, MCL injuries,
+                                shoulder dislocations, tennis elbow, and performance optimization for athletes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <!-- Insurance & Government Schemes Section -->
+    <!-- Insurance & Government Schemes Section -->
+    <section id="insurance" class="section-padding bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="text-uppercase text-teal fw-bold letter-spacing-2 small">Patient Support</span>
+                <h2 class="display-5 fw-bold mt-2">Insurance & Cashless Facilities</h2>
+                <div class="divider mx-auto mt-3 bg-teal" style="width: 60px; height: 3px;"></div>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- Cashless Insurance Card -->
+                <div class="col-lg-6">
+                    <div
+                        class="card border-0 shadow-lg h-100 p-5 rounded-4 position-relative overflow-hidden group-hover-lift">
+                        <div class="position-absolute top-0 end-0 p-3 opacity-10">
+                            <i class="bi bi-wallet2 display-1 text-muted"></i>
+                        </div>
+                        <div
+                            class="d-flex flex-column flex-sm-row align-items-center text-center text-sm-start position-relative z-index-1">
+
+
+                            <div
+                                class="icon-circle bg-danger-subtle text-danger mb-4 mb-sm-0 me-sm-4 p-4 rounded-circle shadow-sm">
+                                <i class="bi bi-credit-card-2-front fs-1"></i>
+                            </div>
+
+                            <div>
+                                <h4 class="fw-bold mb-3">Cashless Insurance (TPA)</h4>
+                                <p class="text-muted mb-4">
+                                    We have tie-ups with all major health insurance providers for seamless cashless
+                                    hospitalization.
+                                </p>
+                                <div class="d-flex flex-wrap justify-content-center justify-content-sm-start gap-2">
+                                    <span
+                                        class="badge bg-white border border-light text-secondary shadow-sm py-2 px-3 rounded-pill">Star
+                                        Health</span>
+                                    <span
+                                        class="badge bg-white border border-light text-secondary shadow-sm py-2 px-3 rounded-pill">ICICI
+                                        Lombard</span>
+                                    <span
+                                        class="badge bg-white border border-light text-secondary shadow-sm py-2 px-3 rounded-pill">HDFC
+                                        Ergo</span>
+                                    <span
+                                        class="badge bg-white border border-light text-secondary shadow-sm py-2 px-3 rounded-pill">Bajaj
+                                        Allianz</span>
+                                    <span
+                                        class="badge bg-white border border-light text-secondary shadow-sm py-2 px-3 rounded-pill">+25
+                                        More</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Government Schemes Card -->
+                <div class="col-lg-6">
+                    <div
+                        class="card border-0 shadow-lg h-100 p-5 rounded-4 position-relative overflow-hidden group-hover-lift">
+                        <div class="position-absolute top-0 end-0 p-3 opacity-10">
+                            <i class="bi bi-building display-1 text-muted"></i>
+                        </div>
+                        <div
+                            class="d-flex flex-column flex-sm-row align-items-center text-center text-sm-start position-relative z-index-1">
+                            <div
+                                class="icon-circle bg-danger-subtle text-danger mb-4 mb-sm-0 me-sm-4 p-4 rounded-circle shadow-sm">
+                                <i class="bi bi-heart-pulse fs-1"></i>
+                            </div>
+                            <div>
+                                <h4 class="fw-bold mb-3">Government Health Schemes</h4>
+                                <p class="text-muted mb-4">
+                                    Authorized hospital for various central and state government healthcare programs for
+                                    eligible beneficiaries.
+                                </p>
+                                <div class="d-flex flex-wrap justify-content-center justify-content-sm-start gap-2">
+                                    <span
+                                        class="badge bg-white border border-light text-secondary shadow-sm py-2 px-3 rounded-pill">Ayushman
+                                        Bharat</span>
+                                    <span
+                                        class="badge bg-white border border-light text-secondary shadow-sm py-2 px-3 rounded-pill">MJPJAY</span>
+                                    <span
+                                        class="badge bg-white border border-light text-secondary shadow-sm py-2 px-3 rounded-pill">CGHS
+                                        / ECHS</span>
+                                    <span
+                                        class="badge bg-white border border-light text-secondary shadow-sm py-2 px-3 rounded-pill">Police
+                                        Health</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents Info -->
+            <div class="row mt-5 justify-content-center">
+                <div class="col-lg-10">
+                    <div class="bg-light p-4 rounded-4 border border-white shadow-sm text-center">
+                        <h6 class="fw-bold text-dark mb-2"><i class="bi bi-info-circle-fill text-teal me-2"></i>Note for
+                            Patients</h6>
+                        <p class="mb-0 text-muted small">
+                            Please carry your valid ID proof (Aadhar Card), Insurance Card / Policy Document, and Past
+                            Medical Records for hassle-free admission.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Blog / Bone Care Tips Section -->
+    <section id="blog" class="section-padding" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-subtitle">Health Blog</p>
+                <h2 class="section-title">Bone Care Tips</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">
+                    Expert advice and tips for maintaining healthy bones and joints.
+                </p>
+            </div>
+            <div class="row g-4">
+                <!-- Blog Post 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/4498362/pexels-photo-4498362.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Knee Care" class="card-img-top" style="height: 180px; object-fit: cover;">
+                        <div class="card-body">
+                            <span class="badge bg-teal mb-2">Joint Health</span>
+                            <h6 class="fw-bold">5 Tips to Prevent Knee Pain</h6>
+                            <p class="text-muted small">Simple exercises and habits to keep your knees healthy and
+                                pain-free.</p>
+                            <a href="#" class="btn btn-sm btn-outline-teal">Read More <i
+                                    class="bi bi-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Post 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/4506109/pexels-photo-4506109.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Spine Health" class="card-img-top" style="height: 180px; object-fit: cover;">
+                        <div class="card-body">
+                            <span class="badge bg-teal mb-2">Spine Care</span>
+                            <h6 class="fw-bold">Posture Tips for Back Pain Relief</h6>
+                            <p class="text-muted small">Correct your posture and reduce chronic back pain with these
+                                expert tips.</p>
+                            <a href="#" class="btn btn-sm btn-outline-teal">Read More <i
+                                    class="bi bi-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Post 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Nutrition" class="card-img-top" style="height: 180px; object-fit: cover;">
+                        <div class="card-body">
+                            <span class="badge bg-teal mb-2">Nutrition</span>
+                            <h6 class="fw-bold">Foods for Strong Bones</h6>
+                            <p class="text-muted small">Calcium-rich foods and nutrients essential for bone strength.
+                            </p>
+                            <a href="#" class="btn btn-sm btn-outline-teal">Read More <i
+                                    class="bi bi-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-teal">View All Articles <i class="bi bi-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="appointment" class="section-padding appointment-bg text-white">
+        <div class="container position-relative z-index-2">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                    <span class="text-warning text-uppercase fw-bold letter-spacing-2">Make an Appointment</span>
+                    <h2 class="display-4 fw-bold mt-2 mb-4">Start Your Recovery Journey</h2>
+                    <p class="lead mb-5 text-white-50">
+                        Don't let pain hold you back. Schedule a consultation with Dr. Prashant Mane today.
+                    </p>
+
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="bg-white text-teal rounded-circle p-3 me-3 display-6">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <div>
+                            <span class="d-block text-white-50 small">24/7 Emergency Line</span>
+                            <span class="h4 mb-0 fw-bold">1800-123-4567</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <div class="bg-white text-teal rounded-circle p-3 me-3 display-6">
+                            <i class="bi bi-clock-fill"></i>
+                        </div>
+                        <div>
+                            <span class="d-block text-white-50 small">OPD Timing</span>
+                            <span class="h5 mb-0 fw-bold">Mon-Sat: 10AM - 8PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="glass-form shadow-lg">
+                        <h3 class="fw-bold mb-4 text-center">Request a Callback</h3>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating text-dark">
+                                        <input type="text" class="form-control" id="formName" placeholder="Your Name">
+                                        <label for="formName">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating text-dark">
+                                        <input type="tel" class="form-control" id="formPhone"
+                                            placeholder="Phone Number">
+                                        <label for="formPhone">Phone Number</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating text-dark">
+                                        <select class="form-select" id="formService">
+                                            <option selected>Select Treatment</option>
+                                            <option value="1">Trauma/Accident</option>
+                                            <option value="2">Joint Replacement</option>
+                                            <option value="3">Spine Surgery</option>
+                                            <option value="4">Other Query</option>
+                                        </select>
+                                        <label for="formService">Looking For</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating text-dark">
+                                        <textarea class="form-control" placeholder="Describe your problem"
+                                            id="formMessage" style="height: 100px"></textarea>
+                                        <label for="formMessage">Describe Issue</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit"
+                                        class="btn btn-danger btn-lg px-5 rounded-pill shadow-lg hover-scale">
+                                        Confirm Appointment <i class="bi bi-arrow-right-circle ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities -->
+    <section id="facilities" class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="section-subtitle bg-teal-light text-white px-3 py-1 rounded-pill d-inline-block">
+                    Infrastructure</p>
+                <h2 class="section-title mt-2">World-Class Facilities</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">
+                    We believe in providing the best environment for healing. Our hospital is equipped with modern
+                    infrastructure to ensure safety and comfort.
+                </p>
+            </div>
+            <div class="row g-4">
+                <!-- OT -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                    <div class="card facility-card border-0 shadow-sm h-100">
+                        <div class="facility-img-wrapper position-relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/247786/pexels-photo-247786.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                alt="OT" class="card-img-top">
+                            <div class="facility-icon-overlay"><i class="bi bi-hospital"></i></div>
+                        </div>
+                        <div class="card-body text-center p-4">
+                            <h5 class="fw-bold mb-2">Modern Operation Theater</h5>
+                            <p class="text-muted small mb-0">Ultra-clean sterile environment with Laminar airflow for
+                                infection-free surgeries.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- X-Ray -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card facility-card border-0 shadow-sm h-100">
+                        <div class="facility-img-wrapper position-relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/4226256/pexels-photo-4226256.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                alt="X-Ray" class="card-img-top">
+                            <div class="facility-icon-overlay"><i class="bi bi-radioactive"></i></div>
+                        </div>
+                        <div class="card-body text-center p-4">
+                            <h5 class="fw-bold mb-2">Digital X-Ray & C-Arm</h5>
+                            <p class="text-muted small mb-0">High-frequency digital radiography for precise bone
+                                fracture detection.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pharmacy -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card facility-card border-0 shadow-sm h-100">
+                        <div class="facility-img-wrapper position-relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/5910943/pexels-photo-5910943.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                alt="Pharmacy" class="card-img-top">
+                            <div class="facility-icon-overlay"><i class="bi bi-capsule"></i></div>
+                        </div>
+                        <div class="card-body text-center p-4">
+                            <h5 class="fw-bold mb-2">Pathology Lab & Pharmacy</h5>
+                            <p class="text-muted small mb-0">In-house pharmacy stocked with all essential orthopedic
+                                medicines and implants.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Wheelchair -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card facility-card border-0 shadow-sm h-100">
+                        <div class="facility-img-wrapper position-relative overflow-hidden">
+                            <img src="https://images.pexels.com/photos/4064554/pexels-photo-4064554.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                alt="Accessibility" class="card-img-top">
+                            <div class="facility-icon-overlay"><i class="bi bi-person-wheelchair"></i></div>
+                        </div>
+                        <div class="card-body text-center p-4">
+                            <h5 class="fw-bold mb-2">Physiotherapy & Rehab</h5>
+                            <p class="text-muted small mb-0">Ramps and elevators ensuring easy movement for disabled and
+                                elderly patients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Tech Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="section-subtitle">Precision Medicine</p>
+                <h2 class="section-title">Advanced Surgical Technology</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">
+                    We leverage state-of-the-art diagnostic and surgical equipment to provide safer and more accurate
+                    treatments.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tech-card">
+                        <img src="https://images.pexels.com/photos/7089020/pexels-photo-7089020.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="C-Arm Image Intensifier">
+                        <div class="tech-overlay">
+                            <h5 class="fw-bold mb-2">C-Arm Image Intensifier</h5>
+                            <p class="small opacity-75 mb-0">High-resolution real-time X-ray imaging for precise implant
+                                placement during surgery.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tech-card">
+                        <img src="https://images.pexels.com/photos/3845129/pexels-photo-3845129.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Advanced Orthopedic Table">
+                        <div class="tech-overlay">
+                            <h5 class="fw-bold mb-2">Modern Trauma Table</h5>
+                            <p class="small opacity-75 mb-0">Specialized radiolucent tables designed for complex
+                                fracture reductions and spine access.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="tech-card">
+                        <img src="https://images.pexels.com/photos/3845625/pexels-photo-3845625.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Digital Radiography">
+                        <div class="tech-overlay">
+                            <h5 class="fw-bold mb-2">Digital DR System</h5>
+                            <p class="small opacity-75 mb-0">Ultra-fast X-ray acquisition with significantly lower
+                                radiation dose for patient safety.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="text-uppercase text-teal fw-bold letter-spacing-2 small">Our Work</span>
+                <h2 class="section-title mt-2">Hospital Gallery</h2>
+                <div class="divider mx-auto mt-3 bg-teal" style="width: 60px; height: 3px;"></div>
+                <p class="text-muted mx-auto mt-3" style="max-width: 600px;">
+                    Browse images of our advanced facilities, surgeries, successful recoveries, and community events.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="d-flex justify-content-center flex-wrap gap-3 mb-5" data-aos="fade-up">
+                <button type="button" class="btn btn-outline-teal px-4 rounded-pill gallery-filter active"
+                    data-filter="all">All</button>
+                <button type="button" class="btn btn-outline-teal px-4 rounded-pill gallery-filter"
+                    data-filter="surgeries">Surgeries</button>
+                <button type="button" class="btn btn-outline-teal px-4 rounded-pill gallery-filter"
+                    data-filter="facilities">Facilities</button>
+                <button type="button" class="btn btn-outline-teal px-4 rounded-pill gallery-filter"
+                    data-filter="events">Events</button>
+                <button type="button" class="btn btn-outline-teal px-4 rounded-pill gallery-filter"
+                    data-filter="patients">Patients</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="row g-4" id="galleryGrid">
+                <!-- Surgery 1 -->
+                <div class="col-md-4 col-lg-3 gallery-item" data-category="surgeries">
+                    <div class="gallery-card rounded-3 overflow-hidden position-relative shadow-sm h-100">
+                        <img src="https://images.pexels.com/photos/3845766/pexels-photo-3845766.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            class="img-fluid w-100 h-100 object-fit-cover" alt="Surgery">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in text-white fs-2"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Surgery 2 -->
+                <div class="col-md-4 col-lg-3 gallery-item" data-category="surgeries">
+                    <div class="gallery-card rounded-3 overflow-hidden position-relative shadow-sm h-100">
+                        <img src="https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            class="img-fluid w-100 h-100 object-fit-cover" alt="Surgery">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in text-white fs-2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facility 1 -->
+                <div class="col-md-4 col-lg-3 gallery-item" data-category="facilities">
+                    <div class="gallery-card rounded-3 overflow-hidden position-relative shadow-sm h-100">
+                        <img src="https://images.pexels.com/photos/247786/pexels-photo-247786.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            class="img-fluid w-100 h-100 object-fit-cover" alt="Facility">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in text-white fs-2"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Facility 2 -->
+                <div class="col-md-4 col-lg-3 gallery-item" data-category="facilities">
+                    <div class="gallery-card rounded-3 overflow-hidden position-relative shadow-sm h-100">
+                        <img src="https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            class="img-fluid w-100 h-100 object-fit-cover" alt="Facility">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in text-white fs-2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 1 -->
+                <div class="col-md-4 col-lg-3 gallery-item" data-category="events">
+                    <div class="gallery-card rounded-3 overflow-hidden position-relative shadow-sm h-100">
+                        <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            class="img-fluid w-100 h-100 object-fit-cover" alt="Event">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in text-white fs-2"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event 2 -->
+                <div class="col-md-4 col-lg-3 gallery-item" data-category="events">
+                    <div class="gallery-card rounded-3 overflow-hidden position-relative shadow-sm h-100">
+                        <img src="https://images.pexels.com/photos/3184297/pexels-photo-3184297.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            class="img-fluid w-100 h-100 object-fit-cover" alt="Event">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in text-white fs-2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patient 1 -->
+                <div class="col-md-4 col-lg-3 gallery-item" data-category="patients">
+                    <div class="gallery-card rounded-3 overflow-hidden position-relative shadow-sm h-100">
+                        <img src="https://images.pexels.com/photos/7446990/pexels-photo-7446990.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            class="img-fluid w-100 h-100 object-fit-cover" alt="Patient">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in text-white fs-2"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Patient 2 -->
+                <div class="col-md-4 col-lg-3 gallery-item" data-category="patients">
+                    <div class="gallery-card rounded-3 overflow-hidden position-relative shadow-sm h-100">
+                        <img src="https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            class="img-fluid w-100 h-100 object-fit-cover" alt="Patient">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in text-white fs-2"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Lightbox Modal -->
+        <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-transparent border-0">
+                    <div class="modal-body p-0 position-relative text-center">
+                        <button type="button"
+                            class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-index-3"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                        <img src="" id="galleryModalImg" class="img-fluid rounded-3 shadow-lg" alt="Gallery Image"
+                            style="max-height: 85vh;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section-padding"
+        style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-subtitle">Testimonials</p>
+                <h2 class="section-title">Happy Patient Stories</h2>
+                <div class="badge bg-warning text-dark px-3 py-2 mt-2 rounded-pill shadow-sm"><i
+                        class="bi bi-star-fill me-1"></i> 4.3/5 Rating on Justdial</div>
+            </div>
+
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Item 1 -->
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-slider-card text-center">
+                                    <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200"
+                                        class="rounded-circle user-img-ring mb-4" alt="Patient">
+                                    <div class="stars mb-3 fs-5">
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                    </div>
+                                    <p class="lead fst-italic text-muted mb-4">"I had a severe compound fracture after a
+                                        bike accident. Dr. Mane performed the surgery perfectly. I was walking within 2
+                                        months! The staff took great care of me."</p>
+                                    <h5 class="fw-bold mb-1">Rohan Deshmukh</h5>
+                                    <small class="text-teal fw-semibold">Trauma Surgery Patient</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-slider-card text-center">
+                                    <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=200"
+                                        class="rounded-circle user-img-ring mb-4" alt="Patient">
+                                    <div class="stars mb-3 fs-5">
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-half text-warning"></i>
+                                    </div>
+                                    <p class="lead fst-italic text-muted mb-4">"My mother underwent Knee Replacement
+                                        surgery here. We are very happy with the results. The hospital is very clean and
+                                        the cost was affordable compared to big cities."</p>
+                                    <h5 class="fw-bold mb-1">Priya Patil</h5>
+                                    <small class="text-teal fw-semibold">Mother's Knee Replacement</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-slider-card text-center">
+                                    <img src="https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&w=200"
+                                        class="rounded-circle user-img-ring mb-4" alt="Patient">
+                                    <div class="stars mb-3 fs-5">
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                    </div>
+                                    <p class="lead fst-italic text-muted mb-4">"Best orthopedic hospital in Phaltan. I
+                                        visited for my chronic back pain. Dr. Mane diagnosed it correctly and with
+                                        physiotherapy, I am fine now."</p>
+                                    <h5 class="fw-bold mb-1">Suresh Jadhav</h5>
+                                    <small class="text-teal fw-semibold">Spine Treatment</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-teal rounded-circle p-3" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-teal rounded-circle p-3" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="section-subtitle">Common Queries</p>
+                <h2 class="section-title">Orthopedic FAQ</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="accordion faq-accordion" id="hospitalFAQ">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
+                                    How long is the recovery period after Joint Replacement surgery?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#hospitalFAQ">
+                                <div class="accordion-body">
+                                    Most patients start walking with support within 24-48 hours. Complete return to
+                                    normal daily activities usually takes 4-6 weeks, with full recovery within 3
+                                    months, depending on physiotherapy compliance.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
+                                    Do you accept Government Health Schemes like MJPJAY or CGHS?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#hospitalFAQ">
+                                <div class="accordion-body">
+                                    Yes, Mane Accident Hospital is authorized for various Central and State Government
+                                    healthcare programs. Please visit our front desk with your card for eligibility
+                                    check and documentation.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
+                                    Is surgery always necessary for every fracture?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#hospitalFAQ">
+                                <div class="accordion-body">
+                                    Not necessarily. Many stable fractures can be treated with high-quality plaster
+                                    casts or braces. Dr. Mane only recommends surgery if the fracture is displaced,
+                                    unstable, or involves a joint surface.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4">
+                                    Can I get an appointment on short notice?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#hospitalFAQ">
+                                <div class="accordion-body">
+                                    For chronic conditions, we recommend booking 1-2 days in advance. However, all
+                                    <b>accident and trauma emergencies</b> are attended immediately 24/7 without the
+                                    need for an appointment.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="section-subtitle">Get in Touch</p>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">
+                    Have questions or need assistance? Reach out to us through any of the following channels or send us
+                    a message.
+                </p>
+            </div>
+
+            <!-- Contact Info Cards -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-info-card">
+                        <div class="icon-box">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <h5>Our Location</h5>
+                        <p>Ring Road, Laxminagar, Phaltan,<br>Dist. Satara - 415523, Maharashtra</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-info-card">
+                        <div class="icon-box">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <h5>Call Us</h5>
+                        <p>Phone: +91 99999 99999<br>Emergency: 1800-123-4567</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-info-card">
+                        <div class="icon-box">
+                            <i class="bi bi-envelope-open-fill"></i>
+                        </div>
+                        <h5>Email Us</h5>
+                        <p>info@Manehospital.com<br>care@Manehospital.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-5">
+                <!-- Contact Form -->
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="contact-form-wrapper">
+                        <h4 class="fw-bold mb-4">Send us a Message</h4>
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name"
+                                            required>
+                                        <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email"
+                                            required>
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject"
+                                            required>
+                                        <label for="subject">Subject</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message"
+                                            style="height: 150px" required></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button class="btn btn-teal w-100 py-3" type="submit">
+                                        <i class="bi bi-send-fill me-2"></i>Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Google Map -->
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="contact-map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60826.96781229048!2d74.3989824!3d17.9836796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc30f6a273b4009%3A0xe537d8e68224300a!2sPhaltan%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1704256000000!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="mb-4">Mane Accident Hospital</h4>
+                    <p class="small opacity-75">Ring Road, Laxminagar, Phaltan<br>Dist. Satara - 415523</p>
+                    <p class="small opacity-75">Phone: +91 99999 99999</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled small opacity-75">
+                        <li><a href="#about" class="text-white text-decoration-none">About Us</a></li>
+                        <li><a href="#doctor-Mane" class="text-white text-decoration-none">Dr. Mane</a></li>
+                        <li><a href="#appointment" class="text-white text-decoration-none">Book Appointment</a></li>
+                        <li><a href="#gallery" class="text-white text-decoration-none">Gallery</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Our Services</h5>
+                    <ul class="list-unstyled small opacity-75">
+                        <li><a href="#services" class="text-white text-decoration-none">Joint Replacement (Knee &
+                                Hip)</a></li>
+                        <li><a href="#services" class="text-white text-decoration-none">Spine & Back Surgery</a></li>
+                        <li><a href="#services" class="text-white text-decoration-none">Fracture & Complex Trauma</a>
+                        </li>
+                        <li><a href="#services" class="text-white text-decoration-none">Arthroscopy (Keyhole
+                                Surgery)</a></li>
+                        <li><a href="#services" class="text-white text-decoration-none">Ilizarov Surgery (Russian
+                                Method)</a></li>
+                        <li><a href="#services" class="text-white text-decoration-none">Sports Injury & Ligament
+                                Surgery</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Location</h5>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60826.96781229048!2d74.3989824!3d17.9836796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc30f6a273b4009%3A0xe537d8e68224300a!2sPhaltan%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1704256000000!5m2!1sen!2sin"
+                        width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-50">
+            <div class="text-center small opacity-50">
+                &copy; 2025 Mane Accident Hospital.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Social Sidebar -->
+    <div class="social-sidebar">
+        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <a href="#" class="fab-btn fab-top js-back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <a href="https://wa.me/919999999999" class="fab-btn fab-whatsapp"><i class="bi bi-whatsapp"></i></a>
+        <a href="tel:+919999999999" class="fab-btn fab-phone"><i class="bi bi-telephone-fill"></i></a>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        function handleHeader() {
+            const navbar = document.querySelector('.navbar');
+            const topBar = document.querySelector('.top-info-bar');
+            const progressBar = document.getElementById("progressBar");
+            const topToBtn = document.querySelector('.js-back-to-top');
+
+            const winScroll = window.scrollY || document.documentElement.scrollTop;
+            const topBarHeight = topBar ? topBar.offsetHeight : 0;
+
+            // 1. Navbar Scrolled Class
+            if (winScroll > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // 2. Navbar Fixed Position Adjustment with requestAnimationFrame for mobile
+            window.requestAnimationFrame(() => {
+                if (winScroll < topBarHeight) {
+                    navbar.style.top = (4 + topBarHeight - winScroll) + 'px';
+                    navbar.style.position = 'fixed';
+                } else {
+                    navbar.style.top = '4px';
+                    navbar.style.position = 'fixed';
+                }
+            });
+
+            // 3. Progress Bar
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            if (progressBar) progressBar.style.width = Math.min(scrolled, 100) + "%";
+
+            // 4. Back to Top Button
+            if (topToBtn) {
+                if (winScroll > 300) {
+                    topToBtn.style.opacity = '1';
+                    topToBtn.style.visibility = 'visible';
+                } else {
+                    topToBtn.style.opacity = '0';
+                    topToBtn.style.visibility = 'hidden';
+                }
+            }
+        }
+
+        // Attach listeners
+        window.addEventListener('scroll', handleHeader);
+        window.addEventListener('resize', handleHeader);
+        window.addEventListener('load', handleHeader);
+        document.addEventListener('DOMContentLoaded', handleHeader);
+
+        // Back to top click handler
+        document.querySelector('.js-back-to-top').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Gallery Filter
+        const filterButtons = document.querySelectorAll('.gallery-filter');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.classList.remove('d-none');
+                        item.classList.add('fade-in'); // Optional animation class
+                    } else {
+                        item.classList.add('d-none');
+                        item.classList.remove('fade-in');
+                    }
+                });
+            });
+        });
+
+        // Gallery Lightbox
+        const galleryCards = document.querySelectorAll('.gallery-card');
+        const modalImg = document.getElementById('galleryModalImg');
+        const galleryModal = new bootstrap.Modal(document.getElementById('galleryModal'));
+
+        galleryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const img = card.querySelector('img');
+                const src = img.src; // Use high-res data-full if available
+                modalImg.src = src;
+                galleryModal.show();
+            });
+        });
+
+        // Close mobile menu on link click
+        const navLinks = document.querySelectorAll('.nav-item:not(.dropdown) .nav-link, .dropdown-item');
+        const navbarCollapse = document.getElementById('navbarNav');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.getComputedStyle(document.querySelector('.navbar-toggler')).display !== 'none' && navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                    bsCollapse.hide();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+Master file code bottom  here 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mane Accident Hospital - Advanced Orthopedic Care</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+
+    <style>
+        :root {
+            /* Branding: Deep Blue & Emergency Red mapped to template variables */
+            --primary: #0f172a;
+            /* Deep Blue (was generic primary) */
+            --primary-dark: #020617;
+
+            --teal: #0f172a;
+            /* MAIN BRAND COLOR (Deep Blue) */
+            --teal-light: #1e293b;
+            /* Lighter Blue */
+
+            --aqua: #dc2626;
+            /* ACCENT COLOR (Emergency Red) */
+            --soft-green: #10b981;
+            /* Success Green */
+
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .bg-teal {
+            background-color: var(--teal) !important;
+        }
+
+        .bg-teal-subtle {
+            background-color: rgba(15, 23, 42, 0.1) !important;
+        }
+
+        /* ======= NEW CONTACT SECTION STYLES ======= */
+        .contact-info-card {
+            padding: 30px;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: center;
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            height: 100%;
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+            border-color: var(--aqua);
+        }
+
+        .contact-info-card .icon-box {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin: 0 auto 25px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-card:hover .icon-box {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .contact-info-card h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .contact-info-card p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .contact-form-wrapper {
+            background: #fff;
+            padding: 45px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+        }
+
+        .form-floating>.form-control:focus~label,
+        .form-floating>.form-control:not(:placeholder-shown)~label {
+            color: var(--teal);
+        }
+
+        .contact-map-wrapper {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            min-height: 450px;
+        }
+
+        .contact-map-wrapper iframe {
+            filter: grayscale(0.2) contrast(1.1);
+            transition: all 0.5s ease;
+        }
+
+        .contact-form-wrapper .form-control {
+            border: 1.5px solid #e2e8f0 !important;
+            border-radius: 12px !important;
+            padding: 1rem 1.25rem !important;
+            background-color: #f8fafc !important;
+            transition: all 0.3s ease !important;
+            color: var(--text-dark) !important;
+        }
+
+        .contact-form-wrapper .form-control:focus {
+            border-color: var(--teal) !important;
+            box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.1) !important;
+            background-color: #fff !important;
+        }
+
+        .form-floating>label {
+            padding: 1rem 1.25rem !important;
+        }
+
+        .contact-map-wrapper:hover iframe {
+            filter: grayscale(0);
+        }
+
+        @media (max-width: 767.98px) {
+            .contact-form-wrapper {
+                padding: 30px 20px;
+            }
+
+            .contact-map-wrapper {
+                min-height: 350px;
+            }
+        }
+
+        .bg-teal-light {
+            background-color: var(--teal-light) !important;
+        }
+
+        .text-teal {
+            color: var(--teal) !important;
+        }
+
+        .text-aqua {
+            color: var(--aqua) !important;
+        }
+
+        /* Scroll Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2000;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--aqua);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        /* Top Info Bar */
+        .top-info-bar {
+            background-color: var(--teal);
+            color: white;
+            padding: 10px 0;
+            font-size: 0.85rem;
+            position: relative;
+            z-index: 1050;
+        }
+
+        .top-info-bar a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .top-info-bar a:hover {
+            color: var(--aqua);
+        }
+
+        /* Navbar */
+        .navbar {
+            transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+            padding: 1rem 0;
+            top: 0;
+            z-index: 1040;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98) !important;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 0;
+            top: 4px !important;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .navbar-toggler {
+            border: 1px solid rgba(15, 23, 42, 0.1) !important;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.25rem rgba(15, 23, 42, 0.1);
+        }
+
+        /* Responsive Mobile Menu Customization */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: white;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                margin-top: 15px;
+                padding: 20px;
+                border-radius: 12px;
+            }
+
+            .nav-link {
+                padding: 12px 0;
+                border-bottom: 1px solid #f1f5f9;
+            }
+
+            .nav-item:last-child .nav-link {
+                border-bottom: none;
+            }
+
+            .navbar-nav .btn-teal {
+                margin-top: 15px;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--aqua) !important;
+        }
+
+        /* Social Sidebar */
+        .social-sidebar {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1040;
+            display: none;
+            flex-direction: column;
+        }
+
+        @media (min-width: 992px) {
+            .social-sidebar {
+                display: flex;
+            }
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            color: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            margin-bottom: 5px;
+            border-radius: 0 8px 8px 0;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            width: 60px;
+            background: var(--aqua);
+            color: white;
+        }
+
+        /* Floating Action Buttons */
+        .fab-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1040;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .fab-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+
+        .fab-btn:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        .fab-whatsapp {
+            background: #25D366;
+        }
+
+        .fab-phone {
+            background: var(--aqua);
+        }
+
+        .fab-top {
+            background: var(--teal);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        /* Hero Carousel */
+        .hero-slide {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            margin-top: 0;
+        }
+
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Gradient: Deep Blue to Red-tinged Blue */
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(220, 38, 38, 0.4) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-slide h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero-slide p.text-uppercase {
+            letter-spacing: 3px;
+            color: var(--aqua) !important;
+        }
+
+        /* Buttons */
+        .btn-teal {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+            border: none;
+            color: #fff;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-teal:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.4);
+            color: #fff;
+        }
+
+        .btn-outline-teal {
+            border: 2px solid var(--teal);
+            color: var(--teal);
+            background: transparent;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-teal:hover {
+            background: var(--teal);
+            color: #fff;
+        }
+
+        /* Sections */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--aqua);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.875rem;
+        }
+
+        /* Cards */
+        .service-card {
+            border: none;
+            border-radius: 16px;
+            transition: all 0.4s ease;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+        }
+
+        .service-card .icon-box {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--aqua) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: #fff;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Doctor Card */
+        .doctor-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .doctor-card img {
+            height: 350px;
+            object-fit: cover;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .testimonial-card .stars {
+            color: #fbbf24;
+        }
+
+        /* Gallery */
+        .gallery-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .gallery-card img {
+            height: 280px !important;
+            /* Fixed height for uniformity */
+            width: 100%;
+            object-fit: cover;
+            /* Ensures image covers area without distortion */
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(220, 38, 38, 0.6));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-card:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-filter.active {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+            border-color: var(--teal);
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+
+        /* Enhanced Facilities */
+        .facility-card {
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-radius: 15px;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .facility-img-wrapper img {
+            transition: transform 0.5s ease;
+            height: 220px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .facility-card:hover .facility-img-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .facility-icon-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--aqua);
+            color: white;
+            border-bottom-left-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 10;
+        }
+
+        /* Enhanced Testimonial Slider */
+        .testimonial-slider-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            margin: 20px;
+        }
+
+        .testimonial-slider-card::before {
+            content: '\201C';
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            font-size: 8rem;
+            color: var(--teal);
+            opacity: 0.1;
+            font-family: sans-serif;
+        }
+
+        .user-img-ring {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 4px solid var(--teal-light);
+            padding: 3px;
+        }
+
+        /* Enhanced Appointment Section */
+        .appointment-bg {
+            background: url('https://images.pexels.com/photos/127873/pexels-photo-127873.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover fixed;
+            position: relative;
+        }
+
+        .appointment-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.9);
+            /* Dark Blue Overlay */
+        }
+
+        .glass-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+        }
+
+        .form-floating>.form-control {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+        }
+
+        .form-floating>label {
+            color: #666;
+        }
+
+        /* Utility Helpers */
+        .bg-white-20 {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .opacity-10 {
+            opacity: 0.1;
+        }
+
+        .letter-spacing-2 {
+            letter-spacing: 2px;
+        }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 28px;
+            }
+
+            h1.display-4,
+            .display-4 {
+                font-size: 2.2rem;
+            }
+
+            .fab-container {
+                right: 15px;
+                bottom: 15px;
+            }
+
+            .fab-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+
+            .glass-form {
+                padding: 1.5rem !important;
+            }
+
+            .section-padding {
+                padding: 50px 0;
+            }
+
+            .hero-slide {
+                min-height: 80vh;
+            }
+        }
+
+        /* ======= NEW SECTIONS STYLES ======= */
+        /* Golden Hour Protocol */
+        .protocol-step {
+            padding: 30px;
+            border-radius: 20px;
+            background: #fff;
+            border-left: 5px solid var(--aqua);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .protocol-step:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 35px rgba(220, 38, 38, 0.1);
+        }
+
+        .protocol-number {
+            width: 40px;
+            height: 40px;
+            background: var(--aqua);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* OPD Schedule */
+        .opd-schedule-wrapper {
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+        }
+
+        .opd-table thead {
+            background: var(--teal);
+            color: #fff;
+        }
+
+        .opd-table th {
+            padding: 20px !important;
+            font-weight: 600;
+            border: none;
+        }
+
+        .opd-table td {
+            padding: 15px 20px !important;
+            vertical-align: middle;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        /* Technology Showcase */
+        .tech-card {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .tech-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .tech-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .tech-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, transparent 100%);
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        /* FAQ Section */
+        .faq-accordion .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            border-radius: 12px !important;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-accordion .accordion-button {
+            padding: 20px;
+            font-weight: 600;
+            color: var(--teal);
+            box-shadow: none;
+        }
+
+        .faq-accordion .accordion-button:not(.collapsed) {
+            background-color: var(--teal);
+            color: #fff;
+        }
+
+        .faq-accordion .accordion-button::after {
+            filter: grayscale(1) invert(0);
+        }
+
+        .faq-accordion .accordion-button:not(.collapsed)::after {
+            filter: grayscale(1) invert(1);
+        }
+
+        .faq-accordion .accordion-body {
+            padding: 25px;
+            line-height: 1.7;
+            color: var(--text-muted);
+            background: #fff;
+        }
+    </style>
+
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100">
+
+    <!-- Scroll Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Top Info Bar -->
+    <div class="top-info-bar">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class="d-flex flex-wrap justify-content-center gap-3 gap-md-4 mb-2 mb-md-0">
+                    <span class="small"><i class="bi bi-telephone-fill me-2 text-aqua"></i>+91 99999 99999</span>
+                    <span class="small"><i class="bi bi-envelope-fill me-2 text-aqua"></i>info@Manehospital.com</span>
+                    <span class="small d-none d-sm-inline"><i class="bi bi-geo-alt-fill me-2 text-aqua"></i>Phaltan,
+                        Satara</span>
+                </div>
+                <div class="d-flex gap-3">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-white">
+        <div class="container">
+            <a class="navbar-brand text-teal" href="#">
+                <i class="bi bi-heart-pulse-fill me-2 text-aqua"></i>Mane Hospital
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-3">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">About
+                            Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#about"><i class="bi bi-hospital me-2 text-teal"></i>Our
+                                    Hospital</a></li>
+                            <li><a class="dropdown-item" href="#doctor-Mane"><i
+                                        class="bi bi-person-badge me-2 text-teal"></i>Dr. Prashant Mane (MBBS, MS
+                                    Ortho)</a></li>
+                            <li><a class="dropdown-item" href="#doctor-Dipali"><i
+                                        class="bi bi-person-badge-fill me-2 text-teal"></i>Dr. Dipali Mane (MBBS,
+                                    DGO)</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#gallery"><i
+                                        class="bi bi-images me-2 text-teal"></i>Hospital Gallery</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-bold text-danger" href="#" role="button"
+                            data-bs-toggle="dropdown">
+                            <i class="bi bi-exclamation-triangle-fill me-1"></i>Emergency
+                        </a>
+                        <ul class="dropdown-menu border-danger">
+                            <li><a class="dropdown-item text-danger fw-semibold" href="#emergency"><i
+                                        class="bi bi-telephone-fill me-2"></i>24/7 Accident & Trauma Care</a></li>
+                            <li><a class="dropdown-item" href="#emergency"><i
+                                        class="bi bi-truck-front me-2 text-danger"></i>Ambulance Service</a></li>
+                            <li><a class="dropdown-item" href="#emergency"><i
+                                        class="bi bi-bandaid me-2 text-danger"></i>First Aid Instructions</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Specialties</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#services"><i
+                                        class="bi bi-gear-wide-connected me-2 text-teal"></i>Joint Replacement (Knee &
+                                    Hip)</a></li>
+                            <li><a class="dropdown-item" href="#services"><i
+                                        class="bi bi-activity me-2 text-teal"></i>Spine & Back Surgery</a></li>
+                            <li><a class="dropdown-item" href="#services"><i
+                                        class="bi bi-bandaid me-2 text-teal"></i>Fracture & Complex Trauma</a></li>
+                            <li><a class="dropdown-item" href="#services"><i
+                                        class="bi bi-eyedropper me-2 text-teal"></i>Arthroscopy (Keyhole Surgery)</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#services"><i
+                                        class="bi bi-wrench-adjustable me-2 text-teal"></i>Ilizarov Surgery (Russian
+                                    Method)</a></li>
+                            <li><a class="dropdown-item" href="#services"><i
+                                        class="bi bi-trophy me-2 text-teal"></i>Sports Injury & Ligament Surgery</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Facilities</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#facilities"><i
+                                        class="bi bi-hospital me-2 text-teal"></i>Modern Operation Theater</a></li>
+                            <li><a class="dropdown-item" href="#facilities"><i
+                                        class="bi bi-radioactive me-2 text-teal"></i>Digital X-Ray & C-Arm</a></li>
+                            <li><a class="dropdown-item" href="#facilities"><i
+                                        class="bi bi-person-walking me-2 text-teal"></i>Physiotherapy & Rehab</a></li>
+                            <li><a class="dropdown-item" href="#facilities"><i
+                                        class="bi bi-capsule me-2 text-teal"></i>Pathology Lab & Pharmacy</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Patient Corner
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#insurance"><i
+                                        class="bi bi-credit-card me-2 text-teal"></i>Cashless Insurance / TPA</a></li>
+                            <li><a class="dropdown-item" href="#insurance"><i
+                                        class="bi bi-building me-2 text-teal"></i>Government Health Schemes</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#testimonials"><i
+                                        class="bi bi-star-fill me-2 text-teal"></i>Patient Reviews</a></li>
+                            <li><a class="dropdown-item" href="#blog"><i
+                                        class="bi bi-journal-medical me-2 text-teal"></i>Health Blog (Bone Care
+                                    Tips)</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Contact Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#contact"><i
+                                        class="bi bi-geo-alt-fill me-2 text-teal"></i>Location (Google Maps)</a></li>
+                            <li><a class="dropdown-item" href="#appointment"><i
+                                        class="bi bi-calendar-check me-2 text-teal"></i>Book an Appointment</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="#appointment" class="btn btn-teal">
+                    <i class="bi bi-calendar-plus me-1"></i>Book Appointment
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    @yield('content')
+
+
+
+    <!-- Footer -->
+    <footer class="text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="mb-4">Mane Accident Hospital</h4>
+                    <p class="small opacity-75">Ring Road, Laxminagar, Phaltan<br>Dist. Satara - 415523</p>
+                    <p class="small opacity-75">Phone: +91 99999 99999</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled small opacity-75">
+                        <li><a href="#about" class="text-white text-decoration-none">About Us</a></li>
+                        <li><a href="#doctor-Mane" class="text-white text-decoration-none">Dr. Mane</a></li>
+                        <li><a href="#appointment" class="text-white text-decoration-none">Book Appointment</a></li>
+                        <li><a href="#gallery" class="text-white text-decoration-none">Gallery</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Our Services</h5>
+                    <ul class="list-unstyled small opacity-75">
+                        <li><a href="#services" class="text-white text-decoration-none">Joint Replacement (Knee &
+                                Hip)</a></li>
+                        <li><a href="#services" class="text-white text-decoration-none">Spine & Back Surgery</a></li>
+                        <li><a href="#services" class="text-white text-decoration-none">Fracture & Complex Trauma</a>
+                        </li>
+                        <li><a href="#services" class="text-white text-decoration-none">Arthroscopy (Keyhole
+                                Surgery)</a></li>
+                        <li><a href="#services" class="text-white text-decoration-none">Ilizarov Surgery (Russian
+                                Method)</a></li>
+                        <li><a href="#services" class="text-white text-decoration-none">Sports Injury & Ligament
+                                Surgery</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Location</h5>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60826.96781229048!2d74.3989824!3d17.9836796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc30f6a273b4009%3A0xe537d8e68224300a!2sPhaltan%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1704256000000!5m2!1sen!2sin"
+                        width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-50">
+            <div class="text-center small opacity-50">
+                &copy; 2025 Mane Accident Hospital.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Social Sidebar -->
+    <div class="social-sidebar">
+        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <a href="#" class="fab-btn fab-top js-back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <a href="https://wa.me/919999999999" class="fab-btn fab-whatsapp"><i class="bi bi-whatsapp"></i></a>
+        <a href="tel:+919999999999" class="fab-btn fab-phone"><i class="bi bi-telephone-fill"></i></a>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        function handleHeader() {
+            const navbar = document.querySelector('.navbar');
+            const topBar = document.querySelector('.top-info-bar');
+            const progressBar = document.getElementById("progressBar");
+            const topToBtn = document.querySelector('.js-back-to-top');
+
+            const winScroll = window.scrollY || document.documentElement.scrollTop;
+            const topBarHeight = topBar ? topBar.offsetHeight : 0;
+
+            // 1. Navbar Scrolled Class
+            if (winScroll > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // 2. Navbar Fixed Position Adjustment with requestAnimationFrame for mobile
+            window.requestAnimationFrame(() => {
+                if (winScroll < topBarHeight) {
+                    navbar.style.top = (4 + topBarHeight - winScroll) + 'px';
+                    navbar.style.position = 'fixed';
+                } else {
+                    navbar.style.top = '4px';
+                    navbar.style.position = 'fixed';
+                }
+            });
+
+            // 3. Progress Bar
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            if (progressBar) progressBar.style.width = Math.min(scrolled, 100) + "%";
+
+            // 4. Back to Top Button
+            if (topToBtn) {
+                if (winScroll > 300) {
+                    topToBtn.style.opacity = '1';
+                    topToBtn.style.visibility = 'visible';
+                } else {
+                    topToBtn.style.opacity = '0';
+                    topToBtn.style.visibility = 'hidden';
+                }
+            }
+        }
+
+        // Attach listeners
+        window.addEventListener('scroll', handleHeader);
+        window.addEventListener('resize', handleHeader);
+        window.addEventListener('load', handleHeader);
+        document.addEventListener('DOMContentLoaded', handleHeader);
+
+        // Back to top click handler
+        document.querySelector('.js-back-to-top').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Gallery Filter
+        const filterButtons = document.querySelectorAll('.gallery-filter');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.classList.remove('d-none');
+                        item.classList.add('fade-in'); // Optional animation class
+                    } else {
+                        item.classList.add('d-none');
+                        item.classList.remove('fade-in');
+                    }
+                });
+            });
+        });
+
+        // Gallery Lightbox
+        const galleryCards = document.querySelectorAll('.gallery-card');
+        const modalImg = document.getElementById('galleryModalImg');
+        const galleryModal = new bootstrap.Modal(document.getElementById('galleryModal'));
+
+        galleryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const img = card.querySelector('img');
+                const src = img.src; // Use high-res data-full if available
+                modalImg.src = src;
+                galleryModal.show();
+            });
+        });
+
+        // Close mobile menu on link click
+        const navLinks = document.querySelectorAll('.nav-item:not(.dropdown) .nav-link, .dropdown-item');
+        const navbarCollapse = document.getElementById('navbarNav');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.getComputedStyle(document.querySelector('.navbar-toggler')).display !== 'none' && navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                    bsCollapse.hide();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
