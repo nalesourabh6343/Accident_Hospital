@@ -1,5 +1,5 @@
-<!-- Services Section -->
-<section id="services" class="section-padding" style="background: var(--bg-light);">
+<!-- Services / Specialties Section -->
+<section id="services" class="section-padding">
     <div class="container">
         <div class="text-center mb-5" data-aos="fade-up">
             <p class="section-subtitle">Our Specialties</p>
@@ -16,9 +16,8 @@
                         alt="Joint Replacement Surgery" class="card-img-top" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="bg-teal rounded-circle d-flex align-items-center justify-content-center me-3"
-                                style="width: 45px; height: 45px; min-width: 45px;">
-                                <i class="bi bi-gear-wide-connected text-white fs-5"></i>
+                            <div class="icon-box bg-primary text-white mb-4">
+                                <i class="bi bi-gear-wide-connected fs-1"></i>
                             </div>
                             <h5 class="fw-bold mb-0">Joint Replacement (Knee & Hip)</h5>
                         </div>
@@ -36,9 +35,8 @@
                         alt="Spine Surgery" class="card-img-top" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="bg-teal rounded-circle d-flex align-items-center justify-content-center me-3"
-                                style="width: 45px; height: 45px; min-width: 45px;">
-                                <i class="bi bi-activity text-white fs-5"></i>
+                            <div class="icon-box bg-primary text-white mb-4">
+                                <i class="bi bi-activity fs-1"></i>
                             </div>
                             <h5 class="fw-bold mb-0">Spine & Back Surgery</h5>
                         </div>
@@ -56,9 +54,8 @@
                         alt="Arthroscopy Surgery" class="card-img-top" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="bg-teal rounded-circle d-flex align-items-center justify-content-center me-3"
-                                style="width: 45px; height: 45px; min-width: 45px;">
-                                <i class="bi bi-eyedropper text-white fs-5"></i>
+                            <div class="icon-box bg-primary text-white mb-4">
+                                <i class="bi bi-eyedropper fs-1"></i>
                             </div>
                             <h5 class="fw-bold mb-0">Arthroscopy (Keyhole Surgery)</h5>
                         </div>
@@ -76,9 +73,8 @@
                         alt="Ilizarov Surgery" class="card-img-top" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="bg-teal rounded-circle d-flex align-items-center justify-content-center me-3"
-                                style="width: 45px; height: 45px; min-width: 45px;">
-                                <i class="bi bi-wrench-adjustable text-white fs-5"></i>
+                            <div class="icon-box bg-primary text-white mb-4">
+                                <i class="bi bi-wrench-adjustable fs-1"></i>
                             </div>
                             <h5 class="fw-bold mb-0">Ilizarov Surgery (Russian Method)</h5>
                         </div>
@@ -96,9 +92,8 @@
                         alt="Fracture Care" class="card-img-top" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="bg-teal rounded-circle d-flex align-items-center justify-content-center me-3"
-                                style="width: 45px; height: 45px; min-width: 45px;">
-                                <i class="bi bi-bandaid text-white fs-5"></i>
+                            <div class="icon-box bg-primary text-white mb-4">
+                                <i class="bi bi-bandaid fs-1"></i>
                             </div>
                             <h5 class="fw-bold mb-0">Fracture & Complex Trauma</h5>
                         </div>
@@ -115,9 +110,8 @@
                         alt="Sports Injury" class="card-img-top" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="bg-teal rounded-circle d-flex align-items-center justify-content-center me-3"
-                                style="width: 45px; height: 45px; min-width: 45px;">
-                                <i class="bi bi-trophy text-white fs-5"></i>
+                            <div class="icon-box bg-primary text-white mb-4">
+                                <i class="bi bi-trophy fs-1"></i>
                             </div>
                             <h5 class="fw-bold mb-0">Sports Injury & Ligament Surgery</h5>
                         </div>

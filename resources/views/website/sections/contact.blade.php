@@ -1,9 +1,10 @@
 <!-- Contact Section -->
-<section id="contact" class="section-padding bg-light">
+<section id="contact" class="section-padding bg-white">
     <div class="container">
         <div class="text-center mb-5" data-aos="fade-up">
             <p class="section-subtitle">Get in Touch</p>
             <h2 class="section-title">Contact Us</h2>
+            <div class="divider mx-auto bg-primary" style="width: 60px; height: 3px;"></div>
             <p class="text-muted mx-auto" style="max-width: 600px;">
                 Have questions or need assistance? Reach out to us through any of the following channels or send us
                 a message.
@@ -18,7 +19,7 @@
                         <i class="bi bi-geo-alt-fill"></i>
                     </div>
                     <h5>Our Location</h5>
-                    <p>Ring Road, Laxminagar, Phaltan,<br>Dist. Satara - 415523, Maharashtra</p>
+                    <p>123 Healthcare Avenue, Phaltan<br>Maharashtra - 415523</p>
                 </div>
             </div>
             <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
@@ -27,7 +28,7 @@
                         <i class="bi bi-telephone-fill"></i>
                     </div>
                     <h5>Call Us</h5>
-                    <p>Phone: +91 99999 99999<br>Emergency: 1800-123-4567</p>
+                    <p>General: +91 1234 567890<br>Emergency: 1800-123-4567</p>
                 </div>
             </div>
             <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
@@ -36,7 +37,7 @@
                         <i class="bi bi-envelope-open-fill"></i>
                     </div>
                     <h5>Email Us</h5>
-                    <p>info@Manehospital.com<br>care@Manehospital.com</p>
+                    <p>care@kokrehospital.com<br>info@kokrehospital.com</p>
                 </div>
             </div>
         </div>
@@ -88,7 +89,7 @@
             <div class="col-lg-6" data-aos="fade-left">
                 <div class="contact-map-wrapper">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60826.96781229048!2d74.3989824!3d17.9836796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc30f6a273b4009%3A0xe537d8e68224300a!2sPhaltan%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1704256000000!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60634.34358485292!2d74.40776854181057!3d17.99532822455956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc243b67cb7c3c5%3A0xe543e4881ae2f7af!2sPhaltan%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1735022830000!5m2!1sen!2sin"
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>

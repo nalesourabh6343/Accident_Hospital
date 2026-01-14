@@ -4,6 +4,7 @@
         <div class="text-center mb-5" data-aos="fade-up">
             <p class="section-subtitle">Life Saving Tips</p>
             <h2 class="section-title">The Golden Hour Protocol</h2>
+            <div class="divider mx-auto bg-primary" style="width: 60px; height: 3px;"></div>
             <p class="text-muted mx-auto" style="max-width: 700px;">
                 The first 60 minutes after an accident are critical. Following these steps can prevent further
                 injury and save lives.

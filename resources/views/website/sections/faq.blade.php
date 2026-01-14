@@ -1,9 +1,9 @@
 <!-- FAQ Section -->
-<section class="section-padding bg-white">
+<section id="faq" class="section-padding bg-light">
     <div class="container">
         <div class="text-center mb-5" data-aos="fade-up">
             <p class="section-subtitle">Common Queries</p>
-            <h2 class="section-title">Orthopedic FAQ</h2>
+            <div class="divider mx-auto bg-primary" style="width: 60px; height: 3px;"></div>
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-8" data-aos="fade-up">
@@ -34,7 +34,7 @@
                         </h2>
                         <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#hospitalFAQ">
                             <div class="accordion-body">
-                                Yes, Mane Accident Hospital is authorized for various Central and State Government
+                                Yes, Kokare Accident Hospital is authorized for various Central and State Government
                                 healthcare programs. Please visit our front desk with your card for eligibility
                                 check and documentation.
                             </div>
@@ -51,8 +51,8 @@
                         <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#hospitalFAQ">
                             <div class="accordion-body">
                                 Not necessarily. Many stable fractures can be treated with high-quality plaster
-                                casts or braces. Dr. Mane only recommends surgery if the fracture is displaced,
-                                unstable, or involves a joint surface.
+                                casts or braces. Our specialists only recommend surgery if the fracture is
+                                displaced, unstable, or involves a joint surface.
                             </div>
                         </div>
                     </div>

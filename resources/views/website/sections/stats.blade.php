@@ -3,20 +3,20 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-6 col-md-3 stat-item mb-4 mb-md-0" data-aos="fade-up">
-                <h3 class="text-teal">23+</h3>
-                <p class="text-muted mb-0">Years Experience</p>
+                <h3>28+</h3>
+                <p class="text-muted mb-0">Years of Experience</p>
             </div>
             <div class="col-6 col-md-3 stat-item mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-teal">10K+</h3>
-                <p class="text-muted mb-0">Surgeries Done</p>
+                <h3>50K+</h3>
+                <p class="text-muted mb-0">Patients Treated</p>
             </div>
             <div class="col-6 col-md-3 stat-item" data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-teal">24/7</h3>
-                <p class="text-muted mb-0">Emergency Care</p>
+                <h3>25+</h3>
+                <p class="text-muted mb-0">Expert Doctors</p>
             </div>
             <div class="col-6 col-md-3 stat-item" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="text-teal">4.3</h3>
-                <p class="text-muted mb-0">Star Rating</p>
+                <h3>15K+</h3>
+                <p class="text-muted mb-0">Surgeries Performed</p>
             </div>
         </div>
     </div>

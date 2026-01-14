@@ -21,16 +21,24 @@
 
     <style>
         :root {
-            /* Branding: Vibrant Royal Blue (Deep Trust & Technology) */
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
-            --teal: #2563eb;
-            --teal-light: #3b82f6;
-            --aqua: #60a5fa;
+            /* Branding: Deep Blue & Emergency Red mapped to template variables */
+            --primary: #0f172a;
+            /* Deep Blue (was generic primary) */
+            --primary-dark: #020617;
+
+            --teal: #0f172a;
+            /* MAIN BRAND COLOR (Deep Blue) */
+            --teal-light: #1e293b;
+            /* Lighter Blue */
+
+            --aqua: #dc2626;
+            /* ACCENT COLOR (Emergency Red) */
             --soft-green: #10b981;
-            --bg-light: #ffffff;
+            /* Success Green */
+
+            --bg-light: #f8fafc;
             --text-dark: #1e293b;
-            --text-muted: #475569;
+            --text-muted: #64748b;
         }
 
         html,
@@ -386,8 +394,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            /* Gradient: Royal Blue to Sky Blue */
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(96, 165, 250, 0.4) 100%);
+            /* Gradient: Deep Blue to Red-tinged Blue */
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(220, 38, 38, 0.4) 100%);
             z-index: 1;
         }
 
@@ -410,7 +418,7 @@
 
         /* Buttons */
         .btn-teal {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
             border: none;
             color: #fff;
             padding: 0.875rem 2rem;
@@ -421,7 +429,7 @@
 
         .btn-teal:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.4);
             color: #fff;
         }
 
@@ -436,22 +444,6 @@
 
         .btn-outline-teal:hover {
             background: var(--teal);
-            color: #fff;
-        }
-
-        .btn-aqua {
-            background: linear-gradient(135deg, var(--aqua) 0%, #93c5fd 100%);
-            border: none;
-            color: #fff;
-            padding: 0.875rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-aqua:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(96, 165, 250, 0.4);
             color: #fff;
         }
 
@@ -485,7 +477,7 @@
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
         }
 
         .service-card .icon-box {
@@ -558,7 +550,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.7), rgba(96, 165, 250, 0.6));
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(220, 38, 38, 0.6));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -571,14 +563,14 @@
         }
 
         .gallery-filter.active {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            border-color: var(--primary);
+            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+            border-color: var(--teal);
             color: #fff;
         }
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
         }
 
         /* Enhanced Facilities */
@@ -662,8 +654,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(30, 64, 175, 0.9);
-            /* Royal Blue Overlay */
+            background: rgba(15, 23, 42, 0.9);
+            /* Dark Blue Overlay */
         }
 
         .glass-form {
@@ -745,7 +737,7 @@
 
         .protocol-step:hover {
             transform: translateX(10px);
-            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 15px 35px rgba(220, 38, 38, 0.1);
         }
 
         .protocol-number {
@@ -814,7 +806,7 @@
             left: 0;
             right: 0;
             padding: 30px;
-            background: linear-gradient(to top, rgba(30, 64, 175, 0.9) 0%, transparent 100%);
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, transparent 100%);
             color: #fff;
             transition: all 0.3s ease;
         }
@@ -831,12 +823,12 @@
         .faq-accordion .accordion-button {
             padding: 20px;
             font-weight: 600;
-            color: var(--primary);
+            color: var(--teal);
             box-shadow: none;
         }
 
         .faq-accordion .accordion-button:not(.collapsed) {
-            background-color: var(--primary);
+            background-color: var(--teal);
             color: #fff;
         }
 

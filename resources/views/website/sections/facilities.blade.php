@@ -1,73 +1,74 @@
-<!-- Facilities -->
-<section id="facilities" class="section-padding">
+<!-- Facilities Section -->
+<section id="facilities" class="section-padding" style="background: var(--bg-light);">
     <div class="container">
         <div class="text-center mb-5" data-aos="fade-up">
-            <p class="section-subtitle bg-teal-light text-white px-3 py-1 rounded-pill d-inline-block">
-                Infrastructure</p>
-            <h2 class="section-title mt-2">World-Class Facilities</h2>
+            <p class="section-subtitle">World-Class Infrastructure</p>
+            <h2 class="section-title">Our Facilities</h2>
             <p class="text-muted mx-auto" style="max-width: 600px;">
-                We believe in providing the best environment for healing. Our hospital is equipped with modern
-                infrastructure to ensure safety and comfort.
+                State-of-the-art medical equipment and modern infrastructure for comprehensive orthopedic care.
             </p>
         </div>
         <div class="row g-4">
-            <!-- OT -->
+            <!-- Modern Operation Theater -->
             <div class="col-md-6 col-lg-3" data-aos="fade-up">
-                <div class="card facility-card border-0 shadow-sm h-100">
-                    <div class="facility-img-wrapper position-relative overflow-hidden">
-                        <img src="https://images.pexels.com/photos/247786/pexels-photo-247786.jpeg?auto=compress&cs=tinysrgb&w=600"
-                            alt="OT" class="card-img-top">
-                        <div class="facility-icon-overlay"><i class="bi bi-hospital"></i></div>
-                    </div>
-                    <div class="card-body text-center p-4">
-                        <h5 class="fw-bold mb-2">Modern Operation Theater</h5>
-                        <p class="text-muted small mb-0">Ultra-clean sterile environment with Laminar airflow for
-                            infection-free surgeries.</p>
+                <div class="card border-0 shadow-sm h-100 overflow-hidden">
+                    <img src="https://images.pexels.com/photos/3845766/pexels-photo-3845766.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Modern Operation Theater" class="card-img-top" style="height: 180px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <div class="facility-icon-overlay bg-primary">
+                            <i class="bi bi-hospital"></i>
+                        </div>
+                        <h6 class="fw-bold">Modern Operation Theater</h6>
+                        <p class="text-muted small mb-0">Laminar flow OT with advanced surgical equipment for
+                            complex orthopedic procedures.</p>
                     </div>
                 </div>
             </div>
-            <!-- X-Ray -->
+
+            <!-- Digital X-Ray & C-Arm -->
             <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                <div class="card facility-card border-0 shadow-sm h-100">
-                    <div class="facility-img-wrapper position-relative overflow-hidden">
-                        <img src="https://images.pexels.com/photos/4226256/pexels-photo-4226256.jpeg?auto=compress&cs=tinysrgb&w=600"
-                            alt="X-Ray" class="card-img-top">
-                        <div class="facility-icon-overlay"><i class="bi bi-radioactive"></i></div>
-                    </div>
-                    <div class="card-body text-center p-4">
-                        <h5 class="fw-bold mb-2">Digital X-Ray & C-Arm</h5>
-                        <p class="text-muted small mb-0">High-frequency digital radiography for precise bone
-                            fracture detection.</p>
+                <div class="card border-0 shadow-sm h-100 overflow-hidden">
+                    <img src="https://images.pexels.com/photos/4226263/pexels-photo-4226263.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Digital X-Ray" class="card-img-top" style="height: 180px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <div class="facility-icon-overlay bg-primary">
+                            <i class="bi bi-radioactive"></i>
+                        </div>
+                        <h6 class="fw-bold">Digital X-Ray & C-Arm</h6>
+                        <p class="text-muted small mb-0">High-resolution digital imaging for accurate diagnosis and
+                            real-time surgical guidance.</p>
                     </div>
                 </div>
             </div>
-            <!-- Pharmacy -->
+
+            <!-- Physiotherapy & Rehab -->
             <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                <div class="card facility-card border-0 shadow-sm h-100">
-                    <div class="facility-img-wrapper position-relative overflow-hidden">
-                        <img src="https://images.pexels.com/photos/5910943/pexels-photo-5910943.jpeg?auto=compress&cs=tinysrgb&w=600"
-                            alt="Pharmacy" class="card-img-top">
-                        <div class="facility-icon-overlay"><i class="bi bi-capsule"></i></div>
-                    </div>
-                    <div class="card-body text-center p-4">
-                        <h5 class="fw-bold mb-2">Pathology Lab & Pharmacy</h5>
-                        <p class="text-muted small mb-0">In-house pharmacy stocked with all essential orthopedic
-                            medicines and implants.</p>
+                <div class="card border-0 shadow-sm h-100 overflow-hidden">
+                    <img src="https://images.pexels.com/photos/4506109/pexels-photo-4506109.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Physiotherapy" class="card-img-top" style="height: 180px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <div class="facility-icon-overlay bg-primary">
+                            <i class="bi bi-person-walking"></i>
+                        </div>
+                        <h6 class="fw-bold">Physiotherapy & Rehab</h6>
+                        <p class="text-muted small mb-0">Dedicated rehab center with trained physiotherapists for
+                            post-surgery recovery.</p>
                     </div>
                 </div>
             </div>
-            <!-- Wheelchair -->
+
+            <!-- Pathology Lab & Pharmacy -->
             <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                <div class="card facility-card border-0 shadow-sm h-100">
-                    <div class="facility-img-wrapper position-relative overflow-hidden">
-                        <img src="https://images.pexels.com/photos/4064554/pexels-photo-4064554.jpeg?auto=compress&cs=tinysrgb&w=600"
-                            alt="Accessibility" class="card-img-top">
-                        <div class="facility-icon-overlay"><i class="bi bi-person-wheelchair"></i></div>
-                    </div>
-                    <div class="card-body text-center p-4">
-                        <h5 class="fw-bold mb-2">Physiotherapy & Rehab</h5>
-                        <p class="text-muted small mb-0">Ramps and elevators ensuring easy movement for disabled and
-                            elderly patients.</p>
+                <div class="card border-0 shadow-sm h-100 overflow-hidden">
+                    <img src="https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Pathology Lab" class="card-img-top" style="height: 180px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <div class="facility-icon-overlay bg-primary">
+                            <i class="bi bi-capsule"></i>
+                        </div>
+                        <h6 class="fw-bold">Pathology Lab & Pharmacy</h6>
+                        <p class="text-muted small mb-0">In-house diagnostic lab and 24/7 pharmacy for all your
+                            medical needs.</p>
                     </div>
                 </div>
             </div>

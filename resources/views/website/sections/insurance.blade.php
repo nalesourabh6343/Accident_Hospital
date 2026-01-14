@@ -94,7 +94,7 @@
         <div class="row mt-5 justify-content-center">
             <div class="col-lg-10">
                 <div class="bg-light p-4 rounded-4 border border-white shadow-sm text-center">
-                    <h6 class="fw-bold text-dark mb-2"><i class="bi bi-info-circle-fill text-teal me-2"></i>Note for
+                    <h6 class="fw-bold text-dark mb-2"><i class="bi bi-info-circle-fill text-primary me-2"></i>Note for
                         Patients</h6>
                     <p class="mb-0 text-muted small">
                         Please carry your valid ID proof (Aadhar Card), Insurance Card / Policy Document, and Past
